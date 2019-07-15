@@ -1,0 +1,4 @@
+select b.[User], b.Email, b.User_ID, b.Role, b.State, a.ActiveUser ADStatus 
+from IDM_Pro.idm.dbo.AD a, [dbo].[AA_PS_Users1] b
+--where a.sam=b.User_ID and ((a.ActiveUser=1 and State='inactive') or (a.ActiveUser=0 and State='active'))
+where a.sam=b.User_ID and  (a.ActiveUser=0 and State='active')
